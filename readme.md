@@ -5,6 +5,10 @@
     docker build -t onnxruntime_image .
     docker run -it --rm --name onnxruntime_container -v /path/on/host/to/onnx/model:/model onnxruntime_image
     ```
+    If you are using MacOS with Apple Silicon chip, run the following build instead
+    ```
+    docker buildx build --platform linux/amd64 -t onnxruntime_image .
+    ```
 
 2. In docker container, compile one of the `test_modelx.cpp`
     ```
